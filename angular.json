@@ -125,7 +125,7 @@
       }
     },
     "pd-free-angularcli-e2e": {
-      
+
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -152,8 +152,8 @@
   "defaultProject": "pd-free-angularcli",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
+      "prefix": "app"
+      // "styleext": "css"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

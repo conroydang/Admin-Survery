@@ -9,14 +9,14 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
-    { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
-    { path: '/maps',          title: 'Maps',              icon:'nc-pin-3',      class: '' },
-    { path: '/notifications', title: 'Notifications',     icon:'nc-bell-55',    class: '' },
-    { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
-    { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
-    { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
-    { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
+    { path: '/dashboard',     title: 'Tổng quan',         icon:'nc-bank',       class: '' },
+    { path: '/icons',         title: 'Quản lý câu hỏi',             icon:'nc-bookmark-2',    class: '' },
+    // { path: '/maps',          title: 'Thống kê kết quả khảo sát',              icon:'nc-pin-3',      class: '' },
+    { path: '/notifications', title: 'Thống kê người tham gia khảo sát',     icon:'nc-satisfied',    class: '' },
+    { path: '/user',          title: 'Thông tin người dùng',      icon:'nc-single-02',  class: '' },
+    { path: '/table',         title: 'Thống kê số liệu CO2',        icon:'nc-tile-56',    class: '' },
+    { path: '/typography',    title: 'Đăng Xuất',        icon:'nc-button-play', class: '' },
+    // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 
 @Component({

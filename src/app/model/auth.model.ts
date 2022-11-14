@@ -3,3 +3,7 @@ export interface IAuth{
   username: string,
   password: string
 }
+
+export interface IRoles extends IAuth{
+  roles:string[]
+}

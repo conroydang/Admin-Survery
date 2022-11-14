@@ -1,0 +1,15 @@
+<form action="" [formGroup]="loginForm" (ngSubmit)="login()">
+  <h3>Sign In</h3>
+      <div class="form-holder">
+        <span class="lnr lnr-user"></span>
+        <input [class]="isValid('txtUsername')" formControlName="txtUsername" type="text" class="form-control" placeholder="Username">
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Password">
+      </div>
+      <button>
+        <span>Login</span>
+      </button>
+
+</form>
