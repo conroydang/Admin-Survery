@@ -12,6 +12,10 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+  NotFoundComponent,
+  HandleErrorComponent
   ]
 })
 export class SharedModule { }

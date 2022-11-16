@@ -1,0 +1,31 @@
+<form [formGroup]="registerForm" (ngSubmit)="signUp()">
+  <h3>New Account?</h3>
+      <div class="form-holder">
+        <span class="lnr lnr-user"></span>
+        <input  [class]="isValid('txtUsername')" formControlName="txtUsername" type="text" class="form-control" placeholder="Username">
+        <app-handle-error [control]="registerForm.get('txtUsername')" [controlName]="'Tên đăng nhập'"></app-handle-error>
+      </div>
+
+      <div class="form-holder">
+        <span class="lnr lnr-envelope"></span>
+        <input [class]="isValid('txtEmail')" formControlName="txtEmail" type="text" class="form-control" placeholder="E-Mail">
+        <app-handle-error [control]="registerForm.get('txtEmail')" [controlName]="'Email'"></app-handle-error>
+
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input [class]="isValid('txtPassword')" formControlName="txtPassword" type="password" class="form-control" placeholder="Password">
+        <app-handle-error [control]="registerForm.get('txtPassword')" [controlName]="'Mật khẩu'"></app-handle-error>
+
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input [class]="isValid('txtConfirmPassword')" formControlName="txtConfirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+        <app-handle-error [control]="registerForm.get('txtConfirmPassword')" [controlName]="'Xác nhận mật khẩu'"></app-handle-error>
+
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid">
+        <span>Register</span>
+      </button>
+
+</form>

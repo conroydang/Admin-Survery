@@ -3,12 +3,16 @@
       <div class="form-holder">
         <span class="lnr lnr-user"></span>
         <input [class]="isValid('txtUsername')" formControlName="txtUsername" type="text" class="form-control" placeholder="Username">
+        <app-handle-error [control]="loginForm.get('txtUsername')" [controlName]="'Tên đăng nhập'"></app-handle-error>
+
       </div>
       <div class="form-holder">
         <span class="lnr lnr-lock"></span>
-        <input type="password" class="form-control" placeholder="Password">
+        <input [class]="isValid('txtPassword')" formControlName="txtPassword" type="password" class="form-control" placeholder="Password">
+        <app-handle-error [control]="loginForm.get('txtPassword')" [controlName]="'Mật khẩu'"></app-handle-error>
+
       </div>
-      <button>
+      <button type="submit" [disabled]="loginForm.invalid">
         <span>Login</span>
       </button>
 

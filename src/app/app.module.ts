@@ -1,4 +1,4 @@
-import { AuthModule } from './layouts/auth/auth.module';
+import { AuthModule } from './layouts/auth-layout/auth.module';
 import { InterceptorInterceptor } from './utils/interceptor/interceptor.interceptor';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
@@ -15,11 +15,13 @@ import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { SurveyLayoutComponent } from './layouts/survey-layout/survey-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    SurveyLayoutComponent
   ],
   imports: [
     BrowserAnimationsModule,

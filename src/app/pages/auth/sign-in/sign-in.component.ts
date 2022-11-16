@@ -8,14 +8,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css','../auth.component.css']
+  styleUrls: ['../../../layouts/auth-layout/auth.component.css']
 })
 export class SignInComponent implements OnInit {
 
   constructor(
     private auth:AuthService,
     private fb:FormBuilder,
-    private router:Router
+    private router:Router,
+
   ) { }
   loginForm: FormGroup=new FormGroup({});
 
@@ -40,11 +41,19 @@ export class SignInComponent implements OnInit {
       if (this.loginForm.valid){
         this.auth.resAuth(body).subscribe(
           res => {
+            if(res.status === 200) {
+              if(res.list.roles[0] === "admin"){
+                return this.router.navigate(['/admin/dashboard']);
+              }
+              if(res.list.roles[0] === "user"){
+                return this.router.navigate(['/user/dashboard']);
+              }
+            }
+            return;
 
           },
           err => {
-
-
+            if(err) return err;
           }
         )
       }

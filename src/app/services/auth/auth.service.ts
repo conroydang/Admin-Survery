@@ -25,10 +25,10 @@ export class AuthService {
   public Auth:any;
 
 
-  private login(body:IAuth):Observable<IResponse<IAuth>>{
+  private login(body:IAuth):Observable<IResponse<IRoles>>{
     this.Auth = this.http.post<Observable<IAuth>>(services.login, body).pipe(map(res =>res))
-    this.Auth.subscribe((next:IResponse<IAuth>) =>  {
-      if(next.status === 200)
+    this.Auth.subscribe((next:IResponse<IRoles>) =>  {
+      if(next.status === 200 && next.list.roles[0] === "admin")
       {
         localStorage['auth'] = JSON.stringify(next.list)
         return this.toastrService.success('Sign in success]')
@@ -50,7 +50,7 @@ export class AuthService {
     return this.Auth;
   }
 
-  public resAuth(body:IAuth):Observable<IResponse<IAuth>>{
+  public resAuth(body:IAuth):Observable<IResponse<IRoles>>{
    return this.login(body)
   }
 

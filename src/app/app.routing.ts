@@ -1,4 +1,4 @@
-import { AuthComponent } from './layouts/auth/auth.component';
+import { AuthComponent } from './layouts/auth-layout/auth.component';
 import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -10,7 +10,7 @@ export const AppRoutes: Routes = [
     component:AuthComponent,
     children:[
       { path: '',
-    loadChildren:() => import('../app/layouts/auth/auth.module').then(x => x.AuthModule)}
+    loadChildren:() => import('./layouts/auth-layout/auth.module').then(x => x.AuthModule)}
     ]
   },
   {

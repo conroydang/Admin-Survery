@@ -9,7 +9,12 @@ export class GuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+      const data:any=localStorage.getItem('auth');
+      const convertData = JSON.parse(data);
+        if(convertData.token !==null || convertData.token !==undefined  ){
+        return true;
+      }
+      return false;
   }
-  
+
 }
