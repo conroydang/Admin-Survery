@@ -28,9 +28,19 @@
               "src/assets/scss/paper-dashboard.scss",
               "node_modules/ngx-toastr/toastr.css",
               "src/assets/css/demo.css",
-              "src/assets/css/auth.css"
+              "node_modules/survey-core/defaultV2.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/aos/dist/aos.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/flat-icons/ecommerce.css",
+              "node_modules/flat-icons/interface.css",
+              "node_modules/flat-icons/technology.css",
+              "node_modules/flat-icons/creative.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -106,7 +116,15 @@
               "src/styles.css",
               "src/assets/sass/paper-dashboard.scss",
               "src/assets/css/demo.css",
-              "src/assets/css/auth.css"
+              "node_modules/survey-core/defaultV2.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/aos/dist/aos.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/flat-icons/ecommerce.css",
+              "node_modules/flat-icons/interface.css",
+              "node_modules/flat-icons/technology.css",
+              "node_modules/flat-icons/creative.css"
             ],
             "assets": [
               "src/assets",

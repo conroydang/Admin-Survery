@@ -4,11 +4,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from "ngx-toastr";
+import { SurveyModule } from "survey-angular-ui";
 
 import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
@@ -20,8 +22,7 @@ import { SurveyLayoutComponent } from './layouts/survey-layout/survey-layout.com
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-    SurveyLayoutComponent
+    AdminLayoutComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,7 +34,8 @@ import { SurveyLayoutComponent } from './layouts/survey-layout/survey-layout.com
     ToastrModule.forRoot(),
     FooterModule,
     FixedPluginModule,
-    AuthModule
+    AuthModule,
+    SurveyModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorInterceptor, multi: true }],
   bootstrap: [AppComponent]

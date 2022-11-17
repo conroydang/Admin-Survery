@@ -58,7 +58,7 @@ export class AuthService {
     return this.register(body);
   }
 
-  isValid(field:string,form:FormGroup):string {
+  private valid(field:string,form:FormGroup):string {
     if(form.get(field)?.invalid  && form.get(field)?.touched){
       return 'is-invalid'
     }else if (!form.get(field)?.invalid  && form.get(field)?.touched && form.get(field)?.dirty){
@@ -66,5 +66,9 @@ export class AuthService {
     }else {
       return ''
     }
+   }
+
+   public isValid(field:string, form:FormGroup) {
+    return this.valid(field, form);
    }
 }

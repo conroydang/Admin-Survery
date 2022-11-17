@@ -21,11 +21,14 @@ export class SignInComponent implements OnInit {
   loginForm: FormGroup=new FormGroup({});
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm():void{
     this.loginForm = this.fb.group({
-      txtEmail:this.fb.control('',[Validators.required,Validators.minLength(2),Validators.maxLength(50),CustomValidations.validEmail]),
+      txtUsername:this.fb.control('',[Validators.required,Validators.minLength(2),Validators.maxLength(50),CustomValidations.validEmail]),
       txtPassword:this.fb.control('',[Validators.required,Validators.minLength(8),Validators.maxLength(30)])
     })
-
   }
 
   login():void{
@@ -62,8 +65,14 @@ export class SignInComponent implements OnInit {
 
   }
 
-  isValid(text:string):string{
-    return this.auth.isValid(text,this.loginForm)
+  valid(field:string):string{
+    if(this.loginForm.get(field)?.invalid  && this.loginForm.get(field)?.touched){
+      return 'is-invalid'
+    }else if (!this.loginForm.get(field)?.invalid  && this.loginForm.get(field)?.touched && this.loginForm.get(field)?.dirty){
+      return 'is-valid'
+    }else {
+      return ''
+    }
   }
 
 }

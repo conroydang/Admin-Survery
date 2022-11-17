@@ -19,16 +19,26 @@ export class SignUpComponent implements OnInit {
   ) { }
   registerForm:FormGroup =new FormGroup({});
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(): void {
     this.registerForm = this.fb.group({
-      txtEmail:this.fb.control('',[Validators.minLength(5),Validators.maxLength(50),Validators.required,CustomValidations.validEmail]),
       txtPassword:this.fb.control('',[Validators.minLength(5),Validators.maxLength(50),Validators.required,CustomValidations.validPassword]),
       txtConfirmPassword:this.fb.control('',[Validators.minLength(5),Validators.maxLength(50),Validators.required,CustomValidations.validPassword]),
       txtUsername:this.fb.control('',[Validators.minLength(5),Validators.maxLength(50),Validators.required,CustomValidations.validEmail]),
+      rdCheckbox:this.fb.control(false,[Validators.requiredTrue])
     },{validator:CustomValidations.matchPassword})
   }
 
-  isValid(text:string): string {
-    return this.auth.isValid(text,this.registerForm)
+  isValid(field:string): string {
+    if(this.registerForm.get(field)?.invalid  && this.registerForm.get(field)?.touched){
+      return 'is-invalid'
+    }else if (!this.registerForm.get(field)?.invalid  && this.registerForm.get(field)?.touched && this.registerForm.get(field)?.dirty){
+      return 'is-valid'
+    }else {
+      return ''
+    }
   }
 
   signUp(){
