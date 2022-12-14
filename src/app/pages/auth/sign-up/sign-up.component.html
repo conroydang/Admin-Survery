@@ -5,15 +5,15 @@
         <!--begin::Authentication - Sign-up -->
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
             <!--begin::Aside-->
-            <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background:url('https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/314424176_1453612518464627_8538940061991206686_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=AJmeMbJqVR8AX-atWHU&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfAFdfs3TzUHm0fTgeuPvsThK15jFxqqoI9pEWrQDz91kw&oe=637AD6EB') no-repeat center center; ">
+            <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative" style="background:url('https://www.aimsindia.com/wp-content/uploads/2022/06/world-environment.png') no-repeat center center; ">
                 <!--begin::Wrapper-->
                 <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
                     <!--begin::Content-->
                     <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20">
                         <!--begin::Logo-->
                         <a [routerLink]="['/']" class="py-9 fw-bolder fs-2qx pb-5 pb-md-10" style="text-decoration: none;" >
-                            <h1 class=" fw-bolder fs-2qx pb-5 pb-md-10"><span style="color:orange;">CO2</span><span style="color:#5757ea;"> Cò cười Trigger</span></h1>
-                            <h2 class="fw-bolder">Ayo brooooo</h2>
+                            <h1 class=" fw-bolder fs-2qx pb-5 pb-md-10"><span style="color:orange;">CO2 Application</span><span style="color:#5757ea;"> Calculate</span></h1>
+                            <!-- <h2 class="fw-bolder">Ayo brooooo</h2> -->
                         </a>
                         <!--end::Logo-->
                         <!--begin::Title-->
@@ -42,30 +42,30 @@
                             <!--begin::Heading-->
                             <div class="mb-10 text-center">
                                 <!--begin::Title-->
-                                <h1 class="text-dark mb-3">Tạo tài khoản</h1>
+                                <h1 class="text-dark mb-3">Sign up new an account</h1>
                                 <!--end::Title-->
                                 <!--begin::Link-->
-                                <div class="text-gray-400 fw-bold fs-4">Sẵn sáng để tạo tài khoản?
-                                    <a [routerLink]="['/login']" class="link-primary fw-bolder">Đăng nhập ở đây</a></div>
+                                <div class="text-gray-400 fw-bold fs-4">You already have an account?
+                                    <a [routerLink]="['/login']" class="link-primary fw-bolder">Sign in here</a></div>
                                 <!--end::Link-->
                             </div>
                             <!--end::Heading-->
                             <!--begin::Action-->
                             <button  type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
-                            <img alt="Logo" src="../../../../assets/dashboard/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Đăng nhập với Google</button>
+                            <img alt="Logo" src="../../../../assets/dashboard/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Sign in with Google</button>
                             <button  type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
-                                <img alt="Logo" src="../../../../assets/dashboard/media/svg/brand-logos/facebook-2.svg" class="h-20px me-3" />Đăng nhập với Facebook</button>
+                                <img alt="Logo" src="../../../../assets/dashboard/media/svg/brand-logos/facebook-2.svg" class="h-20px me-3" />Sign in with Facebook</button>
                             <!--end::Action-->
                             <!--begin::Separator-->
                             <div class="d-flex align-items-center mb-10">
                                 <div class="border-bottom border-gray-300 mw-50 w-100"></div>
-                                <span class="fw-bold text-gray-400 fs-7 mx-2">Hoặc</span>
+                                <span class="fw-bold text-gray-400 fs-7 mx-2">Or</span>
                                 <div class="border-bottom border-gray-300 mw-50 w-100"></div>
                             </div>
                             <!--end::Separator-->
                             <!--begin::Input group-->
                             <div class="fv-row mb-7 ">
-                                <label class="form-label fw-bolder text-dark fs-6 ">Tên đăng nhập</label>
+                                <label class="form-label fw-bolder text-dark fs-6 ">Username</label>
                                 <input formControlName="txtUsername" class="form-control form-control-lg form-control-solid " type="email " placeholder=" " name="email " autocomplete="off " />
                                 <app-handle-error [control]="registerForm.get('txtUsername')" [controlName]="'Tên đăng nhập'"></app-handle-error>
                             </div>
@@ -75,7 +75,7 @@
                                 <!--begin::Wrapper-->
                                 <div class="mb-1 ">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-bolder text-dark fs-6 ">Mật khẩu</label>
+                                    <label class="form-label fw-bolder text-dark fs-6 ">Password</label>
                                     <!--end::Label-->
                                     <!--begin::Input wrapper-->
                                     <div class="position-relative mb-3 ">
@@ -103,7 +103,7 @@
                             <!--end::Input group=-->
                             <!--begin::Input group-->
                             <div class="fv-row mb-5 ">
-                                <label class="form-label fw-bolder text-dark fs-6 ">Xác nhận mật khẩu</label>
+                                <label class="form-label fw-bolder text-dark fs-6 ">Password confirm</label>
                                 <input formControlName="txtConfirmPassword" class="form-control form-control-lg form-control-solid " type="password" name="confirm-password " autocomplete="off " />
                                 <app-handle-error [control]="registerForm.get('txtConfirmPassword')" [controlName]="'Xác nhận mật khẩu'"></app-handle-error>
                             </div>
@@ -112,8 +112,8 @@
                             <div class="fv-row mb-10 ">
                                 <label class="form-check form-check-custom form-check-solid form-check-inline ">
                                     <input  formControlName="rdCheckbox" class="form-check-input " type="checkbox" />
-                                    <span class="form-check-label fw-bold text-gray-700 fs-6 ">Tôi đồng ý
-                                    <a href="# " class="ms-1 link-primary ">với các điều khoản và pháp luật!</a>.</span>
+                                    <span class="form-check-label fw-bold text-gray-700 fs-6 ">I agree with
+                                    <a href="# " class="ms-1 link-primary "> terms and conditions!</a>.</span>
 
                                 </label>
                                 <app-handle-error [control]="registerForm.get('rdCheckbox')" [controlName]="'Điều khoản'"></app-handle-error>
@@ -122,7 +122,7 @@
                             <!--begin::Actions-->
                             <div class="text-center ">
                                 <button type="submit" class="btn btn-lg btn-primary ">
-                                    <span class="indicator-label ">Đăng kí</span>
+                                    <span class="indicator-label ">Sign-up now</span>
 
                                 </button>
                             </div>

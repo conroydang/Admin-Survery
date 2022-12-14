@@ -9,13 +9,13 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Tổng quan',         icon:'nc-bank',       class: '' },
-    { path: '/icons',         title: 'Quản lý câu hỏi',             icon:'nc-bookmark-2',    class: '' },
+    { path: 'dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
+    { path: 'management-survey',         title: 'Manage Survey Forms',             icon:'nc-bookmark-2',    class: '' },
     // { path: '/maps',          title: 'Thống kê kết quả khảo sát',              icon:'nc-pin-3',      class: '' },
-    { path: '/notifications', title: 'Thống kê người tham gia khảo sát',     icon:'nc-satisfied',    class: '' },
-    { path: '/user',          title: 'Thông tin người dùng',      icon:'nc-single-02',  class: '' },
-    { path: '/table',         title: 'Thống kê số liệu CO2',        icon:'nc-tile-56',    class: '' },
-    { path: '/typography',    title: 'Đăng Xuất',        icon:'nc-button-play', class: '' },
+    { path: 'survey-result', title: "Result's survey",     icon:'nc-satisfied',    class: '' },
+    { path: 'management-users',          title: 'Management Users',      icon:'nc-single-02',  class: '' },
+    { path: 'co2',         title: "General's CO2",        icon:'nc-tile-56',    class: '' },
+    { path: 'log-out',    title: 'Sign-Out',        icon:'nc-button-play', class: '' },
     // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 ];
 

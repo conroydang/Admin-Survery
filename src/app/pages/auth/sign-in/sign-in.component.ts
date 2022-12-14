@@ -26,14 +26,14 @@ export class SignInComponent implements OnInit {
 
   initForm():void{
     this.loginForm = this.fb.group({
-      txtUsername:this.fb.control('',[Validators.required,Validators.minLength(2),Validators.maxLength(50),CustomValidations.validEmail]),
+      txtUsername:this.fb.control('',[Validators.required,Validators.minLength(2),Validators.maxLength(50)]),
       txtPassword:this.fb.control('',[Validators.required,Validators.minLength(8),Validators.maxLength(30)])
     })
   }
 
   login():void{
 
-    let body:IAuth = {
+    let body = {
       username:this.loginForm.get('txtUsername')?.value,
       password:this.loginForm.get('txtPassword')?.value
     }
@@ -42,25 +42,9 @@ export class SignInComponent implements OnInit {
       return;
     }else {
       if (this.loginForm.valid){
-        this.auth.resAuth(body).subscribe(
-          res => {
-            if(res.status === 200) {
-              if(res.list.roles[0] === "admin"){
-                return this.router.navigate(['/admin/dashboard']);
-              }
-              if(res.list.roles[0] === "user"){
-                return this.router.navigate(['/user/dashboard']);
-              }
-            }
-            return;
+        this.auth.resAuth(body).subscribe(res => res)
 
-          },
-          err => {
-            if(err) return err;
-          }
-        )
       }
-
     }
 
   }

@@ -3,6 +3,7 @@ import { AuthComponent } from './layouts/auth-layout/auth.component';
 import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 export const AppRoutes: Routes = [
   {
@@ -14,7 +15,7 @@ export const AppRoutes: Routes = [
     ]
   },
   {
-    path:"",
+    path:"auth",
     component:AuthComponent,
     children:[
       { path: '',
@@ -22,7 +23,7 @@ export const AppRoutes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'admin',
     component: AdminLayoutComponent,
     children: [
         {
@@ -31,12 +32,13 @@ export const AppRoutes: Routes = [
   }]},
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'admin/dashboard',
     pathMatch: 'full',
   },
+  { path: '404', component:NotFoundComponent},
   {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: '404'
   }
 
 ]

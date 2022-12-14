@@ -1,13 +1,15 @@
 const port = 3000;
 export const ConfigurationUrl = {
-  host:`localhost${port}`,
+  host:`http://localhost:${port}`,
   list:{
     auth:{
-      login:"/api/auth/login",
-      signup:"/api/auth/register"
+      login:"/auth/login",
+      signup:"/auth/register"
     },
-    data:"/api/data",
+    data:"/api/sample",
     calculate:"/api/caculate",
-    questions:"/api/questions"
+    questions:"/api/questions",
+    user:"/api/users",
+    answers:"/api/answers"
   }
 }

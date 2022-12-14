@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp(){
-    let body:IAuth = {
+    let body = {
       username:this.registerForm.get('txtUsername')?.value,
       password:this.registerForm.get('txtPassword')?.value,
     }

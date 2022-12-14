@@ -35,7 +35,9 @@
               "node_modules/flat-icons/ecommerce.css",
               "node_modules/flat-icons/interface.css",
               "node_modules/flat-icons/technology.css",
-              "node_modules/flat-icons/creative.css"
+              "node_modules/flat-icons/creative.css",
+              "node_modules/survey-creator-core/survey-creator-core.min.css"
+
             ],
             "scripts": [
               "node_modules/aos/dist/aos.js"
@@ -124,7 +126,9 @@
               "node_modules/flat-icons/ecommerce.css",
               "node_modules/flat-icons/interface.css",
               "node_modules/flat-icons/technology.css",
-              "node_modules/flat-icons/creative.css"
+              "node_modules/flat-icons/creative.css",
+              "node_modules/survey-creator-core/survey-creator-core.min.css"
+
             ],
             "assets": [
               "src/assets",

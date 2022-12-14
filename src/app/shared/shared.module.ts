@@ -1,9 +1,11 @@
-import { NotFoundComponent } from './not-found/not-found.component';
-import { HandleErrorComponent } from './handle-error/handle-error.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { FooterHomeComponent } from './footer-home/footer-home.component';
+import { FooterHomeComponent } from './components/footer-home/footer-home.component';
+import { HandleErrorComponent } from './components/handle-error/handle-error.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
 
 
 
@@ -11,8 +13,8 @@ import { FooterHomeComponent } from './footer-home/footer-home.component';
   declarations: [
     HandleErrorComponent,
     NotFoundComponent,
-    HeaderComponent,
-    FooterHomeComponent
+    FooterHomeComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule
@@ -20,8 +22,8 @@ import { FooterHomeComponent } from './footer-home/footer-home.component';
   exports:[
   NotFoundComponent,
   HandleErrorComponent,
-  HeaderComponent,
-  FooterHomeComponent
+  FooterHomeComponent,
+  HeaderComponent
   ]
 })
 export class SharedModule { }

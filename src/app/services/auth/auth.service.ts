@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormGroup } from '@angular/forms';
 import { IAuth, IRoles } from './../../model/auth.model';
 import {  IResponse } from './../../model/res.model';
@@ -20,41 +21,51 @@ export class AuthService {
 
   constructor(
     private http:HttpClient,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router:Router
   ) { }
   public Auth:any;
 
 
   private login(body:IAuth):Observable<IResponse<IRoles>>{
-    this.Auth = this.http.post<Observable<IAuth>>(services.login, body).pipe(map(res =>res))
+    this.Auth = this.http.post<IResponse<IRoles>>(services.login, body).pipe(map(res =>res))
     this.Auth.subscribe((next:IResponse<IRoles>) =>  {
-      if(next.status === 200 && next.list.roles[0] === "admin")
+      console.log(next);
+
+      if(next.status === 200)
       {
-        localStorage['auth'] = JSON.stringify(next.list)
-        return this.toastrService.success('Sign in success]')
+        localStorage['auth'] = JSON.stringify(next.data.token)
+        if(next.data.roles[0] === "admin"){
+        this.router.navigate(['/admin/dashboard']);
+        return this.toastrService.success('Sign in to Admin success')
+        }
+        if(next.data.roles[0] === "user"){
+          this.router.navigate(['/']);
+          return this.toastrService.success('Sign in to User success')
+        }
       }
-      return null;
+      return this.toastrService.error("Cannot sign-in because the username or password are wrong") && null;
     })
-    return this.Auth.pipe(startWith(JSON.parse(localStorage['authInfor' || '[]'])))
+    return this.Auth.pipe(startWith(JSON.parse(localStorage['auth' || '[]'])))
   }
 
-  private register(body:IAuth){
-    this.Auth = this.http.post<Observable<IAuth>>(services.signup, body).pipe(map(res =>res))
-    this.Auth.subscribe((next:IResponse<IAuth>) =>  {
+  private register(body:IAuth):Observable<IResponse<IRoles>>{
+    this.Auth = this.http.post<IRoles>(services.signup, body).pipe(map(res =>res))
+    this.Auth.subscribe((next:IResponse<IRoles>) =>  {
       if(next.status === 200) {
         this.toastrService.success('Sign up success')
-        return next
+        return next.data
       };
-      return null;
+      return this.toastrService.error("Cannot sign-up because the username is exists") && null;
     })
     return this.Auth;
   }
 
-  public resAuth(body:IAuth):Observable<IResponse<IRoles>>{
+  public resAuth(body):Observable<IResponse<IRoles>>{
    return this.login(body)
   }
 
-  public resRegister(body:IAuth):Observable<IResponse<IAuth>>{
+  public resRegister(body):Observable<IResponse<IRoles >>{
     return this.register(body);
   }
 
